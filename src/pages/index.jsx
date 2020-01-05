@@ -1,9 +1,14 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
+import styled from "@emotion/styled"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+
+const Title = styled.h3`
+  color: purple;
+`
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -21,9 +26,9 @@ const IndexPage = () => {
       <SEO title="Home" />
       <h1>Hi people</h1>
       {data.allContentfulWork.nodes.map(({ id, title }) => (
-        <h3 key={id}>
+        <Title key={id}>
           {title}
-        </h3>
+        </Title>
       ))}
       <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
         <Image />

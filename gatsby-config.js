@@ -53,5 +53,6 @@ module.exports = {
         accessToken: process.env.accessToken,
       },
     },
+    `gatsby-plugin-emotion`,
   ],
 }
