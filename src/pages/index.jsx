@@ -1,39 +1,34 @@
 import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
-import styled from "@emotion/styled"
+// import { Link } from "gatsby"
+// import TransitionLink from 'gatsby-plugin-transition-link'
+import AniLink from "gatsby-plugin-transition-link/AniLink";
+import { css } from '@emotion/core'
+import { colors } from "../constants/constants";
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
-const Title = styled.h3`
-  color: purple;
-`
+const dot = css({
+  color: colors.primaryColor
+})
+
+const title = css({
+  color: '#222222',
+  fontSize: '10rem'
+})
 
 const IndexPage = () => {
-  const data = useStaticQuery(graphql`
-    query allContentfulWork {
-      allContentfulWork {
-        nodes {
-          id
-          title
-        }
-      }
-    }
-  `)
   return (
     <Layout>
       <SEO title="Home" />
-      <h1>Hi people</h1>
-      {data.allContentfulWork.nodes.map(({ id, title }) => (
-        <Title key={id}>
-          {title}
-        </Title>
-      ))}
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-        <Image />
-      </div>
-      <Link style={{ fontSize: `50px` }} to="/page-2/">Go to page 2</Link>
+      <h1 css={title}>
+        Hi
+        <span css={dot}>.</span>
+      </h1>
+      {/* <Link style={{ fontSize: `20px` }} to="/page-2/">Go to page 2</Link> */}
+      <AniLink paintDrip to="page-2" color="rebeccapurple">
+        Go to Page 2
+      </AniLink>
     </Layout>
   )
 }
