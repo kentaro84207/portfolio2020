@@ -27,11 +27,20 @@ const titleBox = css({
 })
 
 const title = css({
-  fontSize: '10rem',
-  paddingTop: '30px',
+  paddingTop: '50px',
   position: 'absolute',
   top: '0',
-  right: '-115px',
+  right: '-145px',
+})
+
+const h1 = css({
+  fontSize: '10rem',
+})
+
+const h2 = css({
+  fontSize: '1rem',
+  fontWeight: '400',
+  marginLeft: '30px'
 })
 
 const listBox = css({
@@ -53,10 +62,13 @@ const IndexPage = () => {
       <SEO title="Home" />
       <div css={container}>
         <div css={titleBox}>
-          <h1 css={title}>
-            Hi
-            <span css={dot}>.</span>
-          </h1>
+          <div css={title}>
+            <h1 css={h1}>
+              Hi
+              <span css={dot}>.</span>
+            </h1>
+            <h2 css={h2}>I&apos;m Kentaro - Web developer</h2>
+          </div>
         </div>
         <div css={listBox}>
           <div css={lists}>
