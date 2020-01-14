@@ -1,39 +1,83 @@
 import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
-import styled from "@emotion/styled"
+// import { Link } from "gatsby"
+// import TransitionLink from 'gatsby-plugin-transition-link'
+// import AniLink from "gatsby-plugin-transition-link/AniLink";
+import { css } from '@emotion/core'
+import { colors } from "../constants/constants";
 
+import List from "../components/list"
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
-const Title = styled.h3`
-  color: purple;
-`
+const container = css({
+  display: 'grid',
+  gridTemplateColumns: '1fr 2fr',
+  minHeight: 'calc(100vh - 40px)',
+})
+
+const dot = css({
+  color: colors.primaryColor
+})
+
+const titleBox = css({
+  backgroundColor: colors.primaryColor,
+  gridRow: '1 / 2',
+  gridColumn: '1 / 2',
+  position: 'relative'
+})
+
+const title = css({
+  paddingTop: '50px',
+  position: 'absolute',
+  top: '0',
+  right: '-145px',
+})
+
+const h1 = css({
+  fontSize: '10rem',
+})
+
+const h2 = css({
+  fontSize: '1rem',
+  fontWeight: '400',
+  marginLeft: '30px'
+})
+
+const listBox = css({
+  backgroundColor: colors.gray,
+  gridRow: '1 / 2',
+  gridColumn: '2 / 3'
+})
+
+const lists = css({
+  paddingTop: '250px',
+  paddingLeft: '200px',
+  display: 'flex',
+  flexDirection: 'column'
+})
 
 const IndexPage = () => {
-  const data = useStaticQuery(graphql`
-    query allContentfulWork {
-      allContentfulWork {
-        nodes {
-          id
-          title
-        }
-      }
-    }
-  `)
   return (
     <Layout>
       <SEO title="Home" />
-      <h1>Hi people</h1>
-      {data.allContentfulWork.nodes.map(({ id, title }) => (
-        <Title key={id}>
-          {title}
-        </Title>
-      ))}
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-        <Image />
+      <div css={container}>
+        <div css={titleBox}>
+          <div css={title}>
+            <h1 css={h1}>
+              Hi
+              <span css={dot}>.</span>
+            </h1>
+            <h2 css={h2}>I&apos;m Kentaro - Web developer</h2>
+          </div>
+        </div>
+        <div css={listBox}>
+          <div css={lists}>
+            <List listText="About" />
+            <List listText="Works" />
+            <List listText="Contact" />
+          </div>
+        </div>
       </div>
-      <Link style={{ fontSize: `50px` }} to="/page-2/">Go to page 2</Link>
     </Layout>
   )
 }
