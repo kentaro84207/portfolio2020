@@ -44,7 +44,7 @@ const h2 = css({
 })
 
 const listBox = css({
-  backgroundColor: colors.gray,
+  backgroundColor: colors.baseColor,
   gridRow: '1 / 2',
   gridColumn: '2 / 3'
 })
