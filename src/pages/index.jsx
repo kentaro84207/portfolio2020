@@ -63,7 +63,7 @@ const IndexPage = () => {
       <div css={container}>
         <div css={titleBox}>
           <div css={title}>
-            <h1 css={h1}>
+            <h1 className="hoge" css={h1}>
               Hi
               <span css={dot}>.</span>
             </h1>
