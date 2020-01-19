@@ -14,7 +14,13 @@ const Layout = ({ children }) => {
           maxWidth: `1480px`
         }}
       >
-        <main>{children}</main>
+        <main
+          style={{
+            overflow: `hidden`,
+          }}
+        >
+          {children}
+        </main>
       </div>
     </>
   )
