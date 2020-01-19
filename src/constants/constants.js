@@ -10,8 +10,10 @@ const scandinavian = {
 };
 
 const primaryColor = scandinavian.blue;
+const secondaryColor = scandinavian.red;
 const baseColor = scandinavian.beige;
 export const colors = {
   primaryColor,
+  secondaryColor,
   baseColor,
 };

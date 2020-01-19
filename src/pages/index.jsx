@@ -1,11 +1,8 @@
 import React from "react"
-// import { Link } from "gatsby"
-// import TransitionLink from 'gatsby-plugin-transition-link'
-// import AniLink from "gatsby-plugin-transition-link/AniLink";
 import { css } from '@emotion/core'
 import { colors } from "../constants/constants";
 
-import List from "../components/list"
+import PageLink from "../components/pageLink"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -16,14 +13,14 @@ const container = css({
 })
 
 const dot = css({
-  color: colors.primaryColor
+  color: colors.secondaryColor
 })
 
 const titleBox = css({
-  backgroundColor: colors.primaryColor,
   gridRow: '1 / 2',
   gridColumn: '1 / 2',
-  position: 'relative'
+  position: 'relative',
+  backgroundColor: colors.primaryColor,
 })
 
 const title = css({
@@ -31,6 +28,15 @@ const title = css({
   position: 'absolute',
   top: '0',
   right: '-145px',
+})
+
+const bg = css({
+  width: '100%',
+  height: '100%',
+  position: 'absolute',
+  top: '0',
+  left: '0',
+  backgroundColor: colors.primaryColor,
 })
 
 const h1 = css({
@@ -46,14 +52,16 @@ const h2 = css({
 const listBox = css({
   backgroundColor: colors.baseColor,
   gridRow: '1 / 2',
-  gridColumn: '2 / 3'
+  gridColumn: '2 / 3',
 })
 
 const lists = css({
   paddingTop: '250px',
   paddingLeft: '200px',
   display: 'flex',
-  flexDirection: 'column'
+  flexDirection: 'column',
+  position: 'relative',
+  zIndex: '1'
 })
 
 const IndexPage = () => {
@@ -62,8 +70,9 @@ const IndexPage = () => {
       <SEO title="Home" />
       <div css={container}>
         <div css={titleBox}>
-          <div css={title}>
-            <h1 className="hoge" css={h1}>
+          <div className="an-bg" css={bg} />
+          <div className="an-title" css={title}>
+            <h1 css={h1}>
               Hi
               <span css={dot}>.</span>
             </h1>
@@ -72,9 +81,9 @@ const IndexPage = () => {
         </div>
         <div css={listBox}>
           <div css={lists}>
-            <List listText="About" />
-            <List listText="Works" />
-            <List listText="Contact" />
+            <PageLink linkText="About" />
+            <PageLink linkText="Works" />
+            <PageLink linkText="Contact" />
           </div>
         </div>
       </div>
