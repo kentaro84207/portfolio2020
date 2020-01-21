@@ -13,15 +13,13 @@ const container = css({
   backgroundColor: colors.primaryColor,
 })
 
-const AboutPage = () => {
-  return (
-    <Layout>
-      <SEO title="About" />
-      <div css={container}>
-        <Navi />
-      </div>
-    </Layout>
-  )
-}
+const WorksPage = () => (
+  <Layout>
+    <SEO title="About" />
+    <div css={container}>
+      <Navi />
+    </div>
+  </Layout>
+)
 
-export default AboutPage
+export default WorksPage

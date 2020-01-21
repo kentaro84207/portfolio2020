@@ -1,6 +1,6 @@
 import React from "react"
 import { css } from '@emotion/core'
-import { colors } from "../constants/constants";
+import { colors } from "../constants/constants"
 
 import PageLink from "../components/pageLink"
 import Layout from "../components/layout"
@@ -81,9 +81,9 @@ const IndexPage = () => {
         </div>
         <div css={listBox}>
           <div css={lists}>
-            <PageLink linkText="About" />
-            <PageLink linkText="Works" />
-            <PageLink linkText="Contact" />
+            <PageLink linkText="About" linkTo="/about/" />
+            <PageLink linkText="Works" linkTo="/works/" />
+            <PageLink linkText="Contact" linkTo="/contact/" />
           </div>
         </div>
       </div>

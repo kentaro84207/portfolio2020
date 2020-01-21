@@ -11,10 +11,10 @@ const link = css({
   padding: '40px 0'
 })
 
-const PageLink = ({ linkText }) => (
+const PageLink = ({ linkText, linkTo }) => (
   <TransitionLink
     className="an-link"
-    to="/about/"
+    to={`${linkTo}`}
     css={link}
     exit={{
       trigger: () => Exit(),
