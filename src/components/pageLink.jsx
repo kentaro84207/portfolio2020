@@ -2,11 +2,11 @@ import React from "react"
 import PropTypes from "prop-types"
 import { css } from '@emotion/core'
 import TransitionLink from 'gatsby-plugin-transition-link'
-// import Entry from '../animation/subEntry'
-// import Exit from '../animation/topExit'
+import In from '../animation/subIn'
+import Out from '../animation/subOut'
 
 const link = css({
-  fontSize: '2.5rem',
+  fontSize: '2rem',
   display: 'block',
   padding: '40px 0'
 })
@@ -18,12 +18,12 @@ const PageLink = ({ linkText, linkTo }) => (
     to={`${linkTo}`}
     css={link}
     exit={{
-      trigger: () => console.log('hello'),
-      length: 0
+      trigger: () => Out(),
+      length: 1.8
     }}
     entry={{
-      trigger: () => console.log('hello'),
-      delay: 0
+      trigger: () => In(),
+      delay: 1.8
     }}
   >
     {linkText}
