@@ -6,7 +6,7 @@ import TransitionLink from 'gatsby-plugin-transition-link'
 // import Exit from '../animation/topExit'
 
 const link = css({
-  fontSize: '3rem',
+  fontSize: '2.5rem',
   display: 'block',
   padding: '40px 0'
 })
