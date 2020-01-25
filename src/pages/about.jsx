@@ -6,14 +6,14 @@ import Navi from "../components/navi"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const container = css({
+const wrapper = css({
   display: 'grid',
   gridTemplateColumns: '300px 2fr',
   minHeight: 'calc(100vh - 40px)',
   backgroundColor: colors.primaryColor,
 })
 
-const main = css({
+const container = css({
   gridRow: '1 / 2',
   gridColumn: '2 / 3',
   position: 'relative',
@@ -23,11 +23,11 @@ const AboutPage = () => {
   return (
     <Layout>
       <SEO title="About" />
-      <div className="an-bg" css={container}>
+      <div className="an-bg" css={wrapper}>
         <Navi />
-        <div css={main}>
+        <main css={container}>
           hello
-        </div>
+        </main>
       </div>
     </Layout>
   )

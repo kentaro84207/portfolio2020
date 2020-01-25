@@ -6,7 +6,7 @@ import Navi from "../components/navi"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const container = css({
+const wrapper = css({
   display: 'grid',
   gridTemplateColumns: '300px 2fr',
   minHeight: 'calc(100vh - 40px)',
@@ -16,7 +16,7 @@ const container = css({
 const WorksPage = () => (
   <Layout>
     <SEO title="About" />
-    <div css={container}>
+    <div css={wrapper}>
       <Navi />
     </div>
   </Layout>

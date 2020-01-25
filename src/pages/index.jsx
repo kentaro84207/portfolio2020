@@ -5,7 +5,7 @@ import TopLink from "../components/topLink"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const container = css({
+const wrapper = css({
   display: 'grid',
   gridTemplateColumns: '1fr 2fr',
   minHeight: 'calc(100vh - 40px)',
@@ -67,7 +67,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <div css={container}>
+      <div css={wrapper}>
         <div css={titleBox}>
           <div className="an-bg" css={bg} />
           <div className="an-title" css={title}>
