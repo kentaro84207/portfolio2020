@@ -1,8 +1,7 @@
 import React from "react"
 import { css } from '@emotion/core'
 import { colors } from "../constants/constants"
-
-import PageLink from "../components/pageLink"
+import TopLink from "../components/topLink"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -13,7 +12,7 @@ const container = css({
 })
 
 const dot = css({
-  color: colors.secondaryColor
+  color: colors.accentColor
 })
 
 const titleBox = css({
@@ -81,9 +80,9 @@ const IndexPage = () => {
         </div>
         <div css={listBox}>
           <div css={lists}>
-            <PageLink linkText="About" linkTo="/about/" />
-            <PageLink linkText="Works" linkTo="/works/" />
-            <PageLink linkText="Contact" linkTo="/contact/" />
+            <TopLink linkText="About" linkTo="/about/" />
+            <TopLink linkText="Works" linkTo="/works/" />
+            <TopLink linkText="Contact" linkTo="/contact/" />
           </div>
         </div>
       </div>

@@ -15,7 +15,7 @@ const circle = css({
   width: '50px',
   height: '50px',
   borderRadius: '50%',
-  backgroundColor: colors.secondaryColor,
+  backgroundColor: colors.accentColor,
   position: 'absolute',
   top: '20px',
   left: '20px',
@@ -38,7 +38,6 @@ const bg = css({
   top: '0',
   left: '-20px',
   backgroundColor: colors.baseColor,
-  skewX: "0",
 })
 
 const Navi = () => (
@@ -46,13 +45,14 @@ const Navi = () => (
     <Link
       to="/"
       css={circle}
+      className="an-logo"
     />
     <div css={list}>
       <PageLink linkText="About" linkTo="/about/" />
       <PageLink linkText="Works" linkTo="/works/" />
       <PageLink linkText="Contact" linkTo="/contact/" />
     </div>
-    <div className="an-bg" css={bg} />
+    <div className="an-naviBg" css={bg} />
   </div>
 )
 

@@ -13,12 +13,21 @@ const container = css({
   backgroundColor: colors.primaryColor,
 })
 
+const main = css({
+  gridRow: '1 / 2',
+  gridColumn: '2 / 3',
+  position: 'relative',
+})
+
 const AboutPage = () => {
   return (
     <Layout>
       <SEO title="About" />
-      <div css={container}>
+      <div className="an-bg" css={container}>
         <Navi />
+        <div css={main}>
+          hello
+        </div>
       </div>
     </Layout>
   )

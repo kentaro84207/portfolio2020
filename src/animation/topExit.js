@@ -1,6 +1,7 @@
 import { gsap, Power3, Power4 } from 'gsap'
 
-const Exit = () => {
+const topExit = () => {
+  const bgTl = gsap.timeline()
   gsap.to(".an-title", {
     y: 100,
     opacity: 0,
@@ -19,7 +20,6 @@ const Exit = () => {
     duration: 1.4,
     ease: Power4.easeInOut,
   })
-  const bgTl = gsap.timeline();
   bgTl
     .to(".an-bg", {
       skewX: "5deg",
@@ -34,4 +34,4 @@ const Exit = () => {
     })
 }
 
-export default Exit
+export default topExit
