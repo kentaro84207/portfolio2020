@@ -1,19 +1,18 @@
 import React from "react"
 import { css } from '@emotion/core'
-import { colors } from "../constants/constants";
-
-import PageLink from "../components/pageLink"
+import { colors } from "../constants/constants"
+import TopLink from "../components/topLink"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const container = css({
+const wrapper = css({
   display: 'grid',
   gridTemplateColumns: '1fr 2fr',
   minHeight: 'calc(100vh - 40px)',
 })
 
 const dot = css({
-  color: colors.secondaryColor
+  color: colors.accentColor
 })
 
 const titleBox = css({
@@ -68,7 +67,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <div css={container}>
+      <div css={wrapper}>
         <div css={titleBox}>
           <div className="an-bg" css={bg} />
           <div className="an-title" css={title}>
@@ -81,9 +80,9 @@ const IndexPage = () => {
         </div>
         <div css={listBox}>
           <div css={lists}>
-            <PageLink linkText="About" />
-            <PageLink linkText="Works" />
-            <PageLink linkText="Contact" />
+            <TopLink linkText="About" linkTo="/about/" />
+            <TopLink linkText="Works" linkTo="/works/" />
+            <TopLink linkText="Contact" linkTo="/contact/" />
           </div>
         </div>
       </div>

@@ -1,57 +1,41 @@
 import React from "react"
-import { css } from '@emotion/core'
-import { colors } from "../constants/constants";
+import { mt20, mt50 } from "../styles/util"
 
-import PageLink from "../components/pageLink"
-import Layout from "../components/layout"
+import Layout from "../components/subLayout"
 import SEO from "../components/seo"
 
-const container = css({
-  display: 'grid',
-  gridTemplateColumns: '300px 2fr',
-  minHeight: 'calc(100vh - 40px)',
-  backgroundColor: colors.primaryColor,
-})
-
-const listBox = css({
-  gridRow: '1 / 2',
-  gridColumn: '1 / 2',
-  position: 'relative',
-})
-
-const bg = css({
-  width: 'calc(100% + 20px)',
-  height: '100%',
-  position: 'absolute',
-  top: '0',
-  left: '-20px',
-  backgroundColor: colors.baseColor,
-  skewX: "0",
-})
-
-const lists = css({
-  paddingTop: '100px',
-  paddingLeft: '50px',
-  display: 'flex',
-  flexDirection: 'column',
-  position: 'relative',
-  zIndex: '1'
-})
-
-const AboutPage = () => (
-  <Layout>
-    <SEO title="About" />
-    <div css={container}>
-      <div css={listBox}>
-        <div css={lists}>
-          <PageLink linkText="About" />
-          <PageLink linkText="Works" />
-          <PageLink linkText="Contact" />
-        </div>
-        <div className="an-bg" css={bg} />
-      </div>
-    </div>
-  </Layout>
-)
+const AboutPage = () => {
+  return (
+    <Layout>
+      <SEO title="About" />
+      <h1 className="an-subPage">About me</h1>
+      <p className="an-subPage" css={mt20}>
+        I am Kentaro Suzuki, a web developer who likes design and coding.
+        <br />
+        Currently producing web application using TypeScript and Ruby on Rails at tech company.
+      </p>
+      <section className="an-subPage">
+        <h2 css={mt50}>Skill set</h2>
+        <ul css={mt20}>
+          <li>HTML / CSS / SCSS / GSAP</li>
+          <li>JavaScript/ TypeScript / React / Gatsby / Vue / Nuxt</li>
+          <li>Ruby / Ruby on Rails</li>
+          <li>WordPress / Contentful</li>
+          <li>AWS / GCP / Netlify / Firebase</li>
+          <li>Git / GitHub / CircleCI</li>
+          <li>etc...</li>
+        </ul>
+      </section>
+      <section className="an-subPage">
+        <h2 css={mt50}>Social Media</h2>
+        <ul css={mt20}>
+          <li>GitHub</li>
+          <li>Wantedly</li>
+          <li>Twitter</li>
+        </ul>
+      </section>
+    </Layout>
+  )
+}
 
 export default AboutPage
