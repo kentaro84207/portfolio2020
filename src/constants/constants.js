@@ -6,16 +6,19 @@ const scandinavian = {
   blue: '#c9d9e2',
   darkBlue: '#7894a3',
   purple: '#e5deeb',
-  beige: '#ebe5de'
+  beige: '#ebe5de',
+  white: '#f9f9f9'
 };
 
 const primaryColor = scandinavian.blue;
-const secondaryColor = scandinavian.blue;
+const secondaryColor = scandinavian.green;
 const accentColor = scandinavian.red;
 const baseColor = scandinavian.beige;
+const whiteColor = scandinavian.white;
 export const colors = {
   primaryColor,
   secondaryColor,
   accentColor,
   baseColor,
+  whiteColor
 };

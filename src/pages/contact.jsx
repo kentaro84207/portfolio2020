@@ -6,7 +6,7 @@ const ContactPage = () => {
   return (
     <Layout>
       <SEO title="Contact" />
-      <h1>Contact</h1>
+      <h1 className="an-subPage">Contact</h1>
     </Layout>
   )
 }
