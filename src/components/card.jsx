@@ -1,8 +1,8 @@
 import React from "react"
 import { css } from '@emotion/core'
+import Img from "gatsby-image"
 import { colors } from "../constants/constants"
 import { mt10 } from "../styles/util"
-import dummy from "../images/gatsby-astronaut.png"
 
 const card = css({
   width: '300px',
@@ -17,11 +17,7 @@ const cardFig = css({
   justifyContent: 'center',
   alignItems: 'center',
   overflow: 'hidden',
-  borderRadius: '6px'
-})
-
-const cardImg = css({
-  width: '100%'
+  borderRadius: '6px 6px 0 0'
 })
 
 const cardText = css({
@@ -47,16 +43,18 @@ const cardBtn = css({
   mt10
 )
 
-const Card = () => (
+const Card = ({ post }) => (
   <article className="an-subPage" css={card}>
     <figure css={cardFig}>
-      <img css={cardImg} src={dummy} alt="dummy" />
+      {post.image && (
+        <Img fixed={post.image.fixed} />
+      )}
     </figure>
     <div css={cardContents}>
-      <h2>title</h2>
-      <p css={cardText}>description</p>
-      <p css={mt10}>tools</p>
-      <a css={cardBtn} href="./">visit site</a>
+      <h2>{post.title}</h2>
+      <p css={cardText}>{post.description.content[0].content[0].value}</p>
+      <p css={mt10}>{post.tools}</p>
+      <a css={cardBtn} href={post.link}>visit site</a>
     </div>
   </article>
 )
