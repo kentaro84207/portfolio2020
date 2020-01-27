@@ -1,6 +1,7 @@
 import React from "react"
 import { css } from '@emotion/core'
 import { colors } from "../constants/constants"
+import Load from "../components/load"
 import TopLink from "../components/topLink"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -63,10 +64,13 @@ const lists = css({
   zIndex: '1'
 })
 
+
+
 const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
+      <Load />
       <div css={wrapper}>
         <div css={titleBox}>
           <div className="an-bg" css={bg} />

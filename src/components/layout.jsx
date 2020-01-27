@@ -16,6 +16,7 @@ const Layout = ({ children }) => {
         <main
           style={{
             overflow: `hidden`,
+            position: `relative`
           }}
         >
           {children}

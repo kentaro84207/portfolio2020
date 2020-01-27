@@ -14,11 +14,13 @@ const primaryColor = scandinavian.blue;
 const secondaryColor = scandinavian.green;
 const accentColor = scandinavian.red;
 const baseColor = scandinavian.beige;
+const loadColor = scandinavian.darkBlue;
 const whiteColor = scandinavian.white;
 export const colors = {
   primaryColor,
   secondaryColor,
   accentColor,
   baseColor,
+  loadColor,
   whiteColor
 };
