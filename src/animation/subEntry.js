@@ -26,11 +26,12 @@ const subEntry = () => {
     ease: Power4.easeInOut,
   })
   gsap.from(".an-subPage", {
+    delay: 0.4,
     y: 20,
     opacity: 0,
     duration: 1.4,
-    ease: Back.easeOut.config(4),
-    stagger: 0.1,
+    ease: Back.easeOut.config(3),
+    stagger: 0.3,
   })
   bgTl
     .to(".an-naviBg", {
