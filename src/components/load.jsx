@@ -18,15 +18,21 @@ const block = css({
   backgroundColor: colors.loadColor,
 })
 
-const winW = window.innerWidth - 40
+class Load extends React.Component {
+  componentDidMount() {
+    const winW = window.innerWidth - 40
+    loadIn(winW)
+  }
 
-const Load = () => (
-  <div className="an-load" css={load}>
-    {loadIn(winW)}
-    <div className="an-block" css={block} />
-    <div className="an-block" css={block} />
-    <div className="an-block" css={block} />
-  </div>
-)
+  render() {
+    return (
+      <div className="an-load" css={load}>
+        <div className="an-block" css={block} />
+        <div className="an-block" css={block} />
+        <div className="an-block" css={block} />
+      </div>
+    )
+  }
+}
 
 export default Load
