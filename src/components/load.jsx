@@ -18,9 +18,11 @@ const block = css({
   backgroundColor: colors.loadColor,
 })
 
+const winW = window.innerWidth - 40
+
 const Load = () => (
   <div className="an-load" css={load}>
-    {loadIn()}
+    {loadIn(winW)}
     <div className="an-block" css={block} />
     <div className="an-block" css={block} />
     <div className="an-block" css={block} />

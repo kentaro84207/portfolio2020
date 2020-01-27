@@ -1,8 +1,7 @@
 import { gsap, Power3 } from 'gsap'
 
-const loadIn = () => {
+const loadIn = (winW) => {
   const tl = gsap.timeline()
-  const winW = window.innerWidth - 40
   tl.to(".an-block", {
     x: -winW,
     duration: 0.9,
