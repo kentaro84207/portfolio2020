@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { css } from '@emotion/core'
-import { mt50 } from "../styles/util"
+import { mt50, hide } from "../styles/util"
 import Card from "../components/card"
 import Layout from "../components/subLayout"
 import SEO from "../components/seo"
@@ -47,7 +47,7 @@ const WorksPage = () => {
   return (
     <Layout>
       <SEO title="Works" />
-      <h1 className="an-subPage">Works</h1>
+      <h1 css={hide} className="an-subPage">Works</h1>
       <div css={container}>
         {data.allContentfulPost.edges.map(post => (
           <Card key={post.node.id} post={post.node} />

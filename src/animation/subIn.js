@@ -1,11 +1,17 @@
 import { gsap, Back } from 'gsap'
 
 const subExit = () => {
-  gsap.from(".an-subPage", {
-    y: -30,
-    opacity: 0,
+  gsap.to(".an-wrapper", {
+    opacity: 1,
+    duration: 0,
+  })
+  gsap.fromTo(".an-subPage", {
+    y: -20,
+  }, {
+    y: 0,
+    opacity: 1,
     duration: 0.6,
-    ease: Back.easeOut.config(3),
+    ease: Back.easeOut.config(2),
     stagger: 0.1,
   })
 }
