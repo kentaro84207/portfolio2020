@@ -1,8 +1,9 @@
 import React from "react"
-import { Link } from "gatsby"
 import { css } from '@emotion/core'
+import TransitionLink from 'gatsby-plugin-transition-link'
 import { colors } from "../constants/constants"
 import PageLink from "./pageLink"
+import topIn from '../animation/topIn'
 
 const container = css({
   gridRow: '1 / 2',
@@ -19,7 +20,7 @@ const circle = css({
   position: 'absolute',
   top: '20px',
   left: '20px',
-  zIndex: '1'
+  zIndex: '2'
 })
 
 const list = css({
@@ -42,10 +43,17 @@ const bg = css({
 
 const Navi = () => (
   <div css={container}>
-    <Link
+    <TransitionLink
       to="/"
       css={circle}
       className="an-logo"
+      exit={{
+        trigger: () => topIn(window.innerWidth),
+        length: 0.9
+      }}
+      entry={{
+        delay: 0.9
+      }}
     />
     <div css={list}>
       <PageLink linkText="About" linkTo="/about/" />

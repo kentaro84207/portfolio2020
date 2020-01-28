@@ -19,11 +19,11 @@ const PageLink = ({ linkText, linkTo }) => (
     css={link}
     exit={{
       trigger: () => Out(),
-      length: 1.8
+      length: 1.2
     }}
     entry={{
       trigger: () => In(),
-      delay: 1.8
+      delay: 1.2
     }}
   >
     {linkText}

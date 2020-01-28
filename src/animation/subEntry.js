@@ -27,11 +27,11 @@ const subEntry = () => {
   })
   gsap.from(".an-subPage", {
     delay: 0.4,
-    y: 20,
+    y: 30,
     opacity: 0,
-    duration: 1.4,
+    duration: 0.8,
     ease: Back.easeOut.config(3),
-    stagger: 0.3,
+    stagger: 0.1,
   })
   bgTl
     .to(".an-naviBg", {
