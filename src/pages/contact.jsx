@@ -25,7 +25,7 @@ const textAreaBox = css(
 )
 
 const input = css({
-  padding: '10px 20px',
+  padding: '15px 20px 10px',
   backgroundColor: colors.whiteColor
 })
 
@@ -65,21 +65,21 @@ const ContactPage = () => {
             Your Name :
             {' '}
           </label>
-          <input css={input} id="name" type="text" name="name" />
+          <input css={input} id="name" type="text" name="name" required />
         </p>
         <p css={textBox} className="an-subPage">
           <label htmlFor="email">
             Your Email :
             {' '}
           </label>
-          <input css={input} id="email" type="email" name="email" />
+          <input css={input} id="email" type="email" name="email" required />
         </p>
         <p css={textAreaBox} className="an-subPage">
           <label htmlFor="message">
             Message :
             {' '}
           </label>
-          <textarea css={textArea} id="message" name="message" />
+          <textarea css={textArea} id="message" name="message" required />
         </p>
         <p css={hidden}>
           <label htmlFor="honeypot">
