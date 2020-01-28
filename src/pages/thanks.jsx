@@ -12,7 +12,6 @@ const container = css({
 
 const h1 = css({
   marginBottom: '30px',
-  marginRight: '100px',
 })
 
 const ThanksPage = () => {
