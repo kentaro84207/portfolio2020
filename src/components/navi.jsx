@@ -48,7 +48,7 @@ const Navi = () => (
       css={circle}
       className="an-logo"
       exit={{
-        trigger: () => topIn(),
+        trigger: () => topIn(window.innerWidth),
         length: 0.9
       }}
       entry={{
