@@ -6,11 +6,16 @@ import Navi from "./navi"
 import "../styles/reset.css"
 import "typeface-josefin-sans"
 
+const main = css({
+  overflow: 'hidden',
+  backgroundColor: colors.primaryColor,
+})
+
 const wrapper = css({
   display: 'grid',
   gridTemplateColumns: '250px 2fr',
   minHeight: 'calc(100vh - 40px)',
-  backgroundColor: colors.primaryColor,
+  opacity: 0
 })
 
 const container = css({
@@ -33,12 +38,8 @@ const subLayout = ({ children }) => {
           padding: `20px`,
         }}
       >
-        <main
-          style={{
-            overflow: `hidden`,
-          }}
-        >
-          <div className="an-bg" css={wrapper}>
+        <main css={main}>
+          <div className="an-wrapper" css={wrapper}>
             <Navi />
             <div css={container}>
               <div css={inner}>

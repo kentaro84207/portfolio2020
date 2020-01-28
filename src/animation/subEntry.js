@@ -1,8 +1,11 @@
 import { gsap, Power3, Power4, Back } from 'gsap'
-import { colors } from "../constants/constants"
 
 const subEntry = () => {
   const bgTl = gsap.timeline();
+  gsap.to(".an-wrapper", {
+    opacity: 1,
+    duration: 0.2,
+  })
   gsap.from(".an-logo", {
     opacity: 0,
     scale: 0.9,
@@ -21,14 +24,12 @@ const subEntry = () => {
     duration: 0.9,
     ease: Power4.easeInOut,
   })
-  gsap.from(".an-bg", {
-    backgroundColor: colors.primaryColor,
-    ease: Power4.easeInOut,
-  })
-  gsap.from(".an-subPage", {
+  gsap.fromTo(".an-subPage", {
     delay: 0.4,
     y: 30,
-    opacity: 0,
+  }, {
+    y: 0,
+    opacity: 1,
     duration: 0.8,
     ease: Back.easeOut.config(3),
     stagger: 0.1,
