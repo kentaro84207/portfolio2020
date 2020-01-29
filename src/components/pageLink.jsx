@@ -6,7 +6,7 @@ import In from '../animation/subIn'
 import Out from '../animation/subOut'
 
 const link = css({
-  fontSize: '2rem',
+  fontSize: '2.4rem',
   display: 'block',
   padding: '40px 0'
 })

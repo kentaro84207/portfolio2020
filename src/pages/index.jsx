@@ -21,13 +21,18 @@ const titleBox = css({
   gridColumn: '1 / 2',
   position: 'relative',
   backgroundColor: colors.primaryColor,
+  zIndex: '1'
 })
 
 const title = css({
-  paddingTop: '50px',
   position: 'absolute',
   top: '0',
-  right: '-145px',
+  bottom: '270px',
+  right: '-136px',
+  margin: 'auto',
+  display: 'flex',
+  justifyContent: 'center',
+  flexDirection: 'column'
 })
 
 const bg = css({
@@ -40,7 +45,8 @@ const bg = css({
 })
 
 const h1 = css({
-  fontSize: '10rem',
+  fontSize: '12rem',
+  lineHeight: '0.8'
 })
 
 const h2 = css({
@@ -53,15 +59,18 @@ const listBox = css({
   backgroundColor: colors.baseColor,
   gridRow: '1 / 2',
   gridColumn: '2 / 3',
+  position: 'relative',
 })
 
 const lists = css({
-  paddingTop: '250px',
-  paddingLeft: '200px',
   display: 'flex',
+  justifyContent: 'center',
   flexDirection: 'column',
-  position: 'relative',
-  zIndex: '1'
+  position: 'absolute',
+  top: '80px',
+  bottom: '0',
+  left: '280px',
+  margin: 'auto',
 })
 
 

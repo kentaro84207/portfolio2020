@@ -6,9 +6,9 @@ import Entry from '../animation/subEntry'
 import Exit from '../animation/topExit'
 
 const link = css({
-  fontSize: '3rem',
+  fontSize: '4rem',
   display: 'block',
-  padding: '40px 0'
+  padding: '50px 0'
 })
 
 const TopLink = ({ linkText, linkTo }) => (
