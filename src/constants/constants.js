@@ -1,4 +1,5 @@
-export const breakPoint = '751px';
+const breakPoint = '991px';
+export const mobile = `@media (max-width: ${breakPoint})`
 
 const scandinavian = {
   red: '#f7a98f',
