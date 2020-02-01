@@ -2,8 +2,9 @@ import { gsap, Power3 } from 'gsap'
 
 const loadIn = (winW) => {
   const tl = gsap.timeline()
+  const fixedWinW = winW > 991 ? winW : winW + 40
   tl.to(".an-block", {
-    x: -winW,
+    x: -fixedWinW,
     duration: 0.9,
     ease: Power3.easeIn,
     stagger: 0.1,

@@ -2,13 +2,20 @@ import React from "react"
 import PropTypes from "prop-types"
 import { css } from '@emotion/core'
 import TransitionLink from 'gatsby-plugin-transition-link'
+import { desktop, mobile } from "../constants/constants"
 import Entry from '../animation/subEntry'
 import Exit from '../animation/topExit'
 
 const link = css({
-  fontSize: '4rem',
   display: 'block',
-  padding: '50px 0'
+  [`${desktop}`]: {
+    padding: '50px 0',
+    fontSize: '4rem',
+  },
+  [`${mobile}`]: {
+    padding: '40px 0',
+    fontSize: '3.6rem',
+  },
 })
 
 const TopLink = ({ linkText, linkTo }) => (

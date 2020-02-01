@@ -1,5 +1,8 @@
-const breakPoint = '991px';
-export const mobile = `@media (max-width: ${breakPoint})`
+const breakpoints = [576, 768, 992, 1200]
+export const desktop = `@media (min-width: ${breakpoints[2]}px)`
+export const mobile = `@media (max-width: ${breakpoints[2] - 1}px)`
+export const tablet = `@media (min-width: ${breakpoints[0]}px) and (max-width: ${breakpoints[2] - 1}px)`
+export const sp = `@media (max-width: ${breakpoints[0] - 1}px)`
 
 const scandinavian = {
   red: '#f7a98f',
