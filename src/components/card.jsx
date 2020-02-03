@@ -1,13 +1,16 @@
 import React from "react"
 import { css } from '@emotion/core'
 import Img from "gatsby-image"
-import { colors } from "../constants/constants"
+import { sp, colors } from "../constants/constants"
 import { mt10, hide } from "../styles/util"
 
 const card = css({
   width: '300px',
   backgroundColor: colors.whiteColor,
-  borderRadius: '6px'
+  borderRadius: '6px',
+  [`${sp}`]: {
+    width: '100%',
+  },
 })
 
 const cardFig = css({
@@ -18,6 +21,13 @@ const cardFig = css({
   alignItems: 'center',
   overflow: 'hidden',
   borderRadius: '6px 6px 0 0'
+})
+
+const image = css({
+  width: '300px',
+  [`${sp}`]: {
+    width: '100%'
+  },
 })
 
 const cardText = css({
@@ -47,7 +57,7 @@ const Card = ({ post }) => (
   <article className="an-subPage" css={[card, hide]}>
     <figure css={cardFig}>
       {post.image && (
-        <Img fixed={post.image.fixed} />
+        <Img fluid={post.image.fluid} css={image} />
       )}
     </figure>
     <div css={cardContents}>

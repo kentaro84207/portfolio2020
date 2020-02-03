@@ -1,7 +1,7 @@
 import React from "react"
 import { css } from '@emotion/core'
 import TransitionLink from 'gatsby-plugin-transition-link'
-import { colors } from "../constants/constants"
+import { sp, colors } from "../constants/constants"
 import PageLink from "./pageLink"
 import topIn from '../animation/topIn'
 
@@ -9,6 +9,11 @@ const container = css({
   gridRow: '1 / 2',
   gridColumn: '1 / 2',
   position: 'relative',
+  [`${sp}`]: {
+    display: 'none',
+    position: 'absolute',
+    zIndex: '2'
+  },
 })
 
 const circle = css({

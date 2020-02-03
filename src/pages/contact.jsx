@@ -1,6 +1,6 @@
 import React from "react"
 import { css } from '@emotion/core'
-import { colors } from "../constants/constants"
+import { sp, colors } from "../constants/constants"
 import { mt20, mt50, hide } from "../styles/util"
 import Layout from "../components/subLayout"
 import SEO from "../components/seo"
@@ -12,7 +12,10 @@ const hidden = css({
 const textBox = css({
   width: '300px',
   display: 'flex',
-  flexDirection: 'column'
+  flexDirection: 'column',
+  [`${sp}`]: {
+    width: '100%',
+  },
 },
   mt20
 )
@@ -41,9 +44,12 @@ const btn = css({
   width: '150px',
   padding: '10px 0 5px',
   textAlign: 'center',
-  backgroundColor: colors.accentColor,
+  backgroundColor: colors.secondaryColor,
   borderRadius: '3px',
-  cursor: 'pointer'
+  cursor: 'pointer',
+  [`${sp}`]: {
+    width: '100%',
+  },
 })
 
 const ContactPage = () => {

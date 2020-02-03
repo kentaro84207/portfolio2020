@@ -19,7 +19,7 @@ const ThanksPage = () => {
     <Layout>
       <SEO title="Thanks" />
       <div css={container}>
-        <h1 css={h1}>Thank you for your inquiry !!</h1>
+        <h1 css={h1}>Thank you !</h1>
       </div>
     </Layout>
   )

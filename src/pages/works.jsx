@@ -1,6 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { css } from '@emotion/core'
+import { sp } from "../constants/constants"
 import { mt50, hide } from "../styles/util"
 import Card from "../components/card"
 import Layout from "../components/subLayout"
@@ -11,8 +12,12 @@ const container = css({
   gridTemplateColumns: 'repeat(3, 1fr)',
   columnGap: '30px',
   rowGap: '30px',
+  [`${sp}`]: {
+    gridTemplateColumns: 'repeat(1, 1fr)',
+    columnGap: '0',
+  },
 },
-  mt50
+  mt50,
 )
 
 const WorksPage = () => {
@@ -27,8 +32,8 @@ const WorksPage = () => {
             link
             image {
               title
-              fixed(width: 300, height: 200) {
-                ...GatsbyContentfulFixed
+              fluid(maxWidth: 600) {
+                ...GatsbyContentfulFluid
               }
             }
             description {
