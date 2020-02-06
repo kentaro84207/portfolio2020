@@ -1,8 +1,10 @@
 import React from "react"
 import { css } from '@emotion/core'
 import TransitionLink from 'gatsby-plugin-transition-link'
+import { gsap } from 'gsap'
 import { sp, colors } from "../constants/constants"
 import PageLink from "./pageLink"
+import Hamburger from "./hamburger"
 import topIn from '../animation/topIn'
 
 const container = css({
@@ -10,9 +12,13 @@ const container = css({
   gridColumn: '1 / 2',
   position: 'relative',
   [`${sp}`]: {
-    display: 'none',
-    position: 'absolute',
-    zIndex: '2'
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    zIndex: '2',
+    width: '100%',
+    height: '100vh',
+    opacity: 0,
   },
 })
 
@@ -34,7 +40,13 @@ const list = css({
   display: 'flex',
   flexDirection: 'column',
   position: 'relative',
-  zIndex: '1'
+  zIndex: '1',
+  [`${sp}`]: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: '25vh',
+    marginLeft: '0',
+  }
 })
 
 const bg = css({
@@ -44,29 +56,73 @@ const bg = css({
   top: '0',
   left: '-20px',
   backgroundColor: colors.baseColor,
+  [`${sp}`]: {
+    width: '100%',
+    left: '0',
+  },
 })
 
-const Navi = () => (
-  <div css={container}>
-    <TransitionLink
-      to="/"
-      css={circle}
-      className="an-logo"
-      exit={{
-        trigger: () => topIn(window.innerWidth),
-        length: 0.9
-      }}
-      entry={{
-        delay: 0.9
-      }}
-    />
-    <div css={list}>
-      <PageLink linkText="About" linkTo="/about/" />
-      <PageLink linkText="Works" linkTo="/works/" />
-      <PageLink linkText="Contact" linkTo="/contact/" />
-    </div>
-    <div className="an-naviBg" css={bg} />
-  </div>
-)
+class Navi extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      isActive: false,
+    }
+    this.tl = gsap.timeline()
+    this.foo = React.createRef()
+  }
+
+  handleActive() {
+    const { isActive } = this.state
+    this.setState({ isActive: !isActive })
+    return isActive ? this.closeNavi() : this.openNavi()
+  }
+
+  openNavi() {
+    this.tl.to(this.foo.current, {
+      opacity: 1,
+      duration: 0.3,
+    })
+  }
+
+  closeNavi() {
+    this.tl.to(this.foo.current, {
+      opacity: 0,
+      duration: 0.3,
+    })
+  }
+
+  render() {
+    const { isActive } = this.state
+    return (
+      <>
+        <Hamburger
+          open={isActive ? 'opened' : 'closed'}
+          handleOpen={() => { this.handleActive() }}
+        />
+        <div ref={this.foo} css={container}>
+          <TransitionLink
+            to="/"
+            css={circle}
+            className="an-logo"
+            exit={{
+              trigger: () => topIn(window.innerWidth),
+              length: 0.9
+            }}
+            entry={{
+              delay: 0.9
+            }}
+          />
+          <div css={list}>
+            <PageLink linkText="About" linkTo="/about/" />
+            <PageLink linkText="Works" linkTo="/works/" />
+            <PageLink linkText="Contact" linkTo="/contact/" />
+          </div>
+          <div className="an-naviBg" css={bg} />
+        </div>
+      </>
+    )
+  }
+}
 
 export default Navi

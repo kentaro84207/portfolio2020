@@ -28,6 +28,7 @@ const wrapper = css({
   [`${sp}`]: {
     display: 'block',
     minHeight: '100vh',
+    position: 'relative',
   },
 })
 
