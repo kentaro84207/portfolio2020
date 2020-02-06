@@ -26,7 +26,7 @@ const subEntry = () => {
   })
   gsap.fromTo(".an-subPage", {
     delay: 0.4,
-    y: 30,
+    y: -30,
   }, {
     y: 0,
     opacity: 1,

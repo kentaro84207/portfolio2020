@@ -3,7 +3,7 @@ import { gsap, Power3, Power4 } from 'gsap'
 const topExit = () => {
   const bgTl = gsap.timeline()
   gsap.to(".an-title", {
-    y: 100,
+    y: -100,
     opacity: 0,
     duration: 1.2,
     ease: Power4.easeInOut,
