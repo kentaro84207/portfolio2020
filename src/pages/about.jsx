@@ -1,18 +1,34 @@
 import React from "react"
+import { css } from '@emotion/core'
 import { mt20, mt50 } from "../styles/util"
-
 import Layout from "../components/subLayout"
 import SEO from "../components/seo"
+
+const list = css({
+  display: 'flex',
+  justifyContent: 'flexStart',
+},
+  mt20
+)
+
+const sns = css({
+  width: '50px',
+  marginRight: '15px',
+})
+
+const icon = css({
+  width: '100%'
+})
 
 const AboutPage = () => {
   return (
     <Layout>
       <SEO title="About" />
       <h1 className="an-subPage">About me</h1>
-      <p className="an-subPage" css={[mt20]}>
-        I am Kentaro Suzuki, a web developer who likes design and coding.
+      <p className="an-subPage" css={mt20}>
+        こんにちは。デザインもコーディングも好きなWebエンジニアです。
         <br />
-        Currently producing web application using TypeScript and Ruby on Rails at tech company.
+        I am Kentaro Suzuki, a web developer who likes design and coding.
       </p>
       <section className="an-subPage">
         <h2 css={mt50}>Skill set</h2>
@@ -28,10 +44,13 @@ const AboutPage = () => {
       </section>
       <section className="an-subPage">
         <h2 css={mt50}>Social Media</h2>
-        <ul css={mt20}>
-          <li>GitHub</li>
-          <li>Wantedly</li>
-          <li>Twitter</li>
+        <ul css={list}>
+          <li css={sns}>
+            <a href="https://github.com/kentaro84207" target="_blank" rel="noopener noreferrer"><img css={icon} src="/github.png" alt="GitHub" /></a>
+          </li>
+          <li css={sns}>
+            <a href="https://twitter.com/kentaro_s90" target="_blank" rel="noopener noreferrer"><img css={icon} src="/twitter.png" alt="twitter" /></a>
+          </li>
         </ul>
       </section>
     </Layout>

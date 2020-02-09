@@ -19,6 +19,7 @@ const container = css({
     width: '100%',
     height: '100vh',
     opacity: 0,
+    display: 'none',
   },
 })
 
@@ -83,6 +84,7 @@ class Navi extends React.Component {
     this.tl.to(this.foo.current, {
       opacity: 1,
       duration: 0.3,
+      display: 'block',
     })
   }
 
@@ -90,6 +92,7 @@ class Navi extends React.Component {
     this.tl.to(this.foo.current, {
       opacity: 0,
       duration: 0.3,
+      display: 'none',
     })
   }
 
