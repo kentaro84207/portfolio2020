@@ -1,4 +1,8 @@
-export const breakPoint = '751px';
+const breakpoints = [576, 768, 992, 1200]
+export const desktop = `@media (min-width: ${breakpoints[2]}px)`
+export const mobile = `@media (max-width: ${breakpoints[2] - 1}px)`
+export const tablet = `@media (min-width: ${breakpoints[0]}px) and (max-width: ${breakpoints[2] - 1}px)`
+export const sp = `@media (max-width: ${breakpoints[0] - 1}px)`
 
 const scandinavian = {
   red: '#f7a98f',
@@ -7,7 +11,8 @@ const scandinavian = {
   darkBlue: '#7894a3',
   purple: '#e5deeb',
   beige: '#ebe5de',
-  white: '#f9f9f9'
+  white: '#f9f9f9',
+  black: '#111111',
 };
 
 const primaryColor = scandinavian.blue;
@@ -16,11 +21,13 @@ const accentColor = scandinavian.red;
 const baseColor = scandinavian.beige;
 const loadColor = scandinavian.darkBlue;
 const whiteColor = scandinavian.white;
+const blackColor = scandinavian.black;
 export const colors = {
   primaryColor,
   secondaryColor,
   accentColor,
   baseColor,
   loadColor,
-  whiteColor
+  whiteColor,
+  blackColor,
 };

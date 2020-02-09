@@ -1,15 +1,22 @@
 import React from "react"
 import { css } from '@emotion/core'
-import { colors } from "../constants/constants"
-import loadIn from '../animation/loadIn'
+import { desktop, mobile, colors } from "../constants/constants"
+// import loadIn from '../animation/loadIn'
 
 const load = css({
+  display: 'none',
   position: 'absolute',
   top: 0,
   left: 0,
-  width: 'calc(100vw - 40px)',
-  height: 'calc(100vh - 40px)',
   zIndex: 2,
+  [`${desktop}`]: {
+    width: 'calc(100vw - 40px)',
+    height: 'calc(100vh - 40px)',
+  },
+  [`${mobile}`]: {
+    width: '100vw',
+    height: '100vh',
+  },
 })
 
 const block = css({
@@ -19,10 +26,10 @@ const block = css({
 })
 
 class Load extends React.Component {
-  componentDidMount() {
-    const winW = window.innerWidth - 40
-    loadIn(winW)
-  }
+  // componentDidMount() {
+  //   const winW = window.innerWidth - 40
+  //   loadIn(winW)
+  // }
 
   render() {
     return (

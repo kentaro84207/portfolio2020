@@ -2,33 +2,45 @@ import React from "react"
 import PropTypes from "prop-types"
 import { css } from '@emotion/core'
 import TransitionLink from 'gatsby-plugin-transition-link'
-import In from '../animation/subIn'
-import Out from '../animation/subOut'
+import { sp, tablet } from "../constants/constants"
+// import In from '../animation/subIn'
+// import Out from '../animation/subOut'
 
 const link = css({
-  fontSize: '2rem',
   display: 'block',
-  padding: '40px 0'
+  padding: '40px 0',
+  fontSize: '2.4rem',
+  [`${tablet}`]: {
+    fontSize: '1.8rem',
+  },
+  [`${sp}`]: {
+    width: '200px',
+    fontSize: '3.4rem',
+  },
 })
 
-const PageLink = ({ linkText, linkTo }) => (
-
-  <TransitionLink
-    className="an-link"
-    to={`${linkTo}`}
-    css={link}
-    exit={{
-      trigger: () => Out(),
-      length: 1.2
-    }}
-    entry={{
-      trigger: () => In(),
-      delay: 1.2
-    }}
-  >
-    {linkText}
-  </TransitionLink>
-)
+class PageLink extends React.Component {
+  render() {
+    const { linkText, linkTo } = this.props
+    return (
+      <TransitionLink
+        className="an-link"
+        to={`${linkTo}`}
+        css={link}
+        exit={{
+          // trigger: () => Out(),
+          length: 0
+        }}
+        entry={{
+          // trigger: () => In(),
+          delay: 0
+        }}
+      >
+        {linkText}
+      </TransitionLink>
+    )
+  }
+}
 
 PageLink.propTypes = {
   linkText: PropTypes.string,
