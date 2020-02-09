@@ -2,7 +2,7 @@ import React from "react"
 import { css } from '@emotion/core'
 import Img from "gatsby-image"
 import { sp, colors } from "../constants/constants"
-import { mt10, hide } from "../styles/util"
+import { mt10 } from "../styles/util"
 
 const card = css({
   width: '300px',
@@ -54,7 +54,7 @@ const cardBtn = css({
 )
 
 const Card = ({ post }) => (
-  <article className="an-subPage" css={[card, hide]}>
+  <article className="an-subPage" css={card}>
     <figure css={cardFig}>
       {post.image && (
         <Img fluid={post.image.fluid} css={image} />

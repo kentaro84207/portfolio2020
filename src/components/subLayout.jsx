@@ -24,7 +24,7 @@ const wrapper = css({
   display: 'grid',
   gridTemplateColumns: '250px 2fr',
   minHeight: 'calc(100vh - 40px)',
-  opacity: 0,
+  // opacity: 0,
   [`${sp}`]: {
     display: 'block',
     minHeight: '100vh',

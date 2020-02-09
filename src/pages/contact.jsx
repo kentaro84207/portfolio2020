@@ -1,7 +1,7 @@
 import React from "react"
 import { css } from '@emotion/core'
 import { sp, colors } from "../constants/constants"
-import { mt20, mt50, hide } from "../styles/util"
+import { mt20, mt50 } from "../styles/util"
 import Layout from "../components/subLayout"
 import SEO from "../components/seo"
 
@@ -56,7 +56,7 @@ const ContactPage = () => {
   return (
     <Layout>
       <SEO title="Contact" />
-      <h1 css={hide} className="an-subPage">Contact</h1>
+      <h1 className="an-subPage">Contact</h1>
       <form
         css={mt50}
         name="Contact Form"
@@ -66,21 +66,21 @@ const ContactPage = () => {
         action="/thanks"
       >
         <input type="hidden" name="form-name" value="Contact Form" />
-        <p css={[textBox, hide]} className="an-subPage">
+        <p css={textBox} className="an-subPage">
           <label htmlFor="name">
             Your Name :
             {' '}
           </label>
           <input css={input} id="name" type="text" name="name" required />
         </p>
-        <p css={[textBox, hide]} className="an-subPage">
+        <p css={textBox} className="an-subPage">
           <label htmlFor="email">
             Your Email :
             {' '}
           </label>
           <input css={input} id="email" type="email" name="email" required />
         </p>
-        <p css={[textAreaBox, hide]} className="an-subPage">
+        <p css={textAreaBox} className="an-subPage">
           <label htmlFor="message">
             Message :
             {' '}
@@ -93,7 +93,7 @@ const ContactPage = () => {
             <input id="honeypot" name="bot-field" />
           </label>
         </p>
-        <p css={[mt50, hide]} className="an-subPage">
+        <p css={mt50} className="an-subPage">
           <button css={btn} type="submit">Send</button>
         </p>
       </form>

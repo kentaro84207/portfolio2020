@@ -1,9 +1,10 @@
 import React from "react"
 import { css } from '@emotion/core'
 import { desktop, mobile, colors } from "../constants/constants"
-import loadIn from '../animation/loadIn'
+// import loadIn from '../animation/loadIn'
 
 const load = css({
+  display: 'none',
   position: 'absolute',
   top: 0,
   left: 0,
@@ -25,10 +26,10 @@ const block = css({
 })
 
 class Load extends React.Component {
-  componentDidMount() {
-    const winW = window.innerWidth - 40
-    loadIn(winW)
-  }
+  // componentDidMount() {
+  //   const winW = window.innerWidth - 40
+  //   loadIn(winW)
+  // }
 
   render() {
     return (

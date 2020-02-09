@@ -5,7 +5,7 @@ import { gsap } from 'gsap'
 import { sp, colors } from "../constants/constants"
 import PageLink from "./pageLink"
 import Hamburger from "./hamburger"
-import topIn from '../animation/topIn'
+// import topIn from '../animation/topIn'
 
 const container = css({
   gridRow: '1 / 2',
@@ -106,11 +106,11 @@ class Navi extends React.Component {
             css={circle}
             className="an-logo"
             exit={{
-              trigger: () => topIn(window.innerWidth),
-              length: 0.9
+              // trigger: () => topIn(window.innerWidth),
+              length: 0
             }}
             entry={{
-              delay: 0.9
+              delay: 0
             }}
           />
           <div css={list}>

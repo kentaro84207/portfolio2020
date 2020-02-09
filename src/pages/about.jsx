@@ -1,5 +1,5 @@
 import React from "react"
-import { mt20, mt50, hide } from "../styles/util"
+import { mt20, mt50 } from "../styles/util"
 
 import Layout from "../components/subLayout"
 import SEO from "../components/seo"
@@ -8,13 +8,13 @@ const AboutPage = () => {
   return (
     <Layout>
       <SEO title="About" />
-      <h1 css={hide} className="an-subPage">About me</h1>
-      <p className="an-subPage" css={[mt20, hide]}>
+      <h1 className="an-subPage">About me</h1>
+      <p className="an-subPage" css={[mt20]}>
         I am Kentaro Suzuki, a web developer who likes design and coding.
         <br />
         Currently producing web application using TypeScript and Ruby on Rails at tech company.
       </p>
-      <section css={hide} className="an-subPage">
+      <section className="an-subPage">
         <h2 css={mt50}>Skill set</h2>
         <ul css={mt20}>
           <li>HTML / CSS / SCSS / GSAP</li>
@@ -26,7 +26,7 @@ const AboutPage = () => {
           <li>etc...</li>
         </ul>
       </section>
-      <section css={hide} className="an-subPage">
+      <section className="an-subPage">
         <h2 css={mt50}>Social Media</h2>
         <ul css={mt20}>
           <li>GitHub</li>
