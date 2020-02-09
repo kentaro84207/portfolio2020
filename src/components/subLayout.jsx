@@ -17,7 +17,10 @@ const sub = css({
 const main = css({
   overflow: 'hidden',
   backgroundColor: colors.primaryColor,
-  position: 'relative'
+  position: 'relative',
+  [`${sp}`]: {
+    backgroundColor: colors.baseColor,
+  },
 })
 
 const wrapper = css({

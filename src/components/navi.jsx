@@ -59,6 +59,7 @@ const bg = css({
   [`${sp}`]: {
     width: '100%',
     left: '0',
+    backgroundColor: colors.primaryColor,
   },
 })
 
