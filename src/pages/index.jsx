@@ -12,6 +12,7 @@ const wrapper = css({
   minHeight: 'calc(100vh - 40px)',
   [`${sp}`]: {
     gridTemplateColumns: '1fr',
+    gridTemplateRows: '250px 1fr',
     minHeight: '100vh',
   }
 })
