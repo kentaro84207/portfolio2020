@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { css } from '@emotion/core'
-import { sp, colors } from "../constants/constants"
+import { sp, tablet, colors } from "../constants/constants"
 import Navi from "./navi"
 import "../styles/reset.css"
 import "typeface-josefin-sans"
@@ -28,6 +28,9 @@ const wrapper = css({
   gridTemplateColumns: '250px 2fr',
   minHeight: 'calc(100vh - 40px)',
   // opacity: 0,
+  [`${tablet}`]: {
+    gridTemplateColumns: '150px 2fr',
+  },
   [`${sp}`]: {
     display: 'block',
     minHeight: '100vh',
@@ -42,8 +45,7 @@ const container = css({
 })
 
 const inner = css({
-  width: '800px',
-  margin: '30px auto 0 100px',
+  margin: '30px 50px',
   [`${sp}`]: {
     width: '100%',
     margin: '0',

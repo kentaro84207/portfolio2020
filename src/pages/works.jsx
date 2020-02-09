@@ -9,7 +9,7 @@ import SEO from "../components/seo"
 
 const container = css({
   display: 'grid',
-  gridTemplateColumns: 'repeat(3, 1fr)',
+  gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
   columnGap: '30px',
   rowGap: '30px',
   [`${sp}`]: {

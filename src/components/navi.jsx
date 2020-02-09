@@ -2,7 +2,7 @@ import React from "react"
 import { css } from '@emotion/core'
 import TransitionLink from 'gatsby-plugin-transition-link'
 import { gsap } from 'gsap'
-import { sp, colors } from "../constants/constants"
+import { desktop, sp, tablet, colors } from "../constants/constants"
 import PageLink from "./pageLink"
 import Hamburger from "./hamburger"
 // import topIn from '../animation/topIn'
@@ -29,20 +29,28 @@ const circle = css({
   height: '50px',
   borderRadius: '50%',
   backgroundColor: colors.accentColor,
-  position: 'absolute',
-  top: '20px',
-  left: '20px',
+  position: 'fixed',
+  top: '40px',
+  left: '40px',
   zIndex: '2'
 })
 
 const list = css({
-  marginTop: '100px',
-  marginLeft: '50px',
   display: 'flex',
   flexDirection: 'column',
-  position: 'relative',
   zIndex: '1',
+  [`${desktop}`]: {
+    position: 'fixed',
+    top: '120px',
+    left: '70px',
+  },
+  [`${tablet}`]: {
+    position: 'fixed',
+    top: '120px',
+    left: '40px',
+  },
   [`${sp}`]: {
+    position: 'relative',
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: '25vh',
@@ -51,15 +59,13 @@ const list = css({
 })
 
 const bg = css({
-  width: 'calc(100% + 20px)',
+  width: '100%',
   height: '100%',
   position: 'absolute',
   top: '0',
-  left: '-20px',
+  left: '0',
   backgroundColor: colors.baseColor,
   [`${sp}`]: {
-    width: '100%',
-    left: '0',
     backgroundColor: colors.primaryColor,
   },
 })

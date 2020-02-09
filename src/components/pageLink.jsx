@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { css } from '@emotion/core'
 import TransitionLink from 'gatsby-plugin-transition-link'
-import { sp } from "../constants/constants"
+import { sp, tablet } from "../constants/constants"
 // import In from '../animation/subIn'
 // import Out from '../animation/subOut'
 
@@ -10,6 +10,9 @@ const link = css({
   display: 'block',
   padding: '40px 0',
   fontSize: '2.4rem',
+  [`${tablet}`]: {
+    fontSize: '1.8rem',
+  },
   [`${sp}`]: {
     width: '200px',
     fontSize: '3.4rem',

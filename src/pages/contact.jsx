@@ -23,7 +23,8 @@ const textBox = css({
 const textAreaBox = css(
   textBox,
   {
-    width: '600px',
+    width: '100%',
+    maxWidth: '800px',
   }
 )
 
