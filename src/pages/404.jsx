@@ -1,14 +1,28 @@
 import React from "react"
-
-import Layout from "../components/layout"
+import { css } from '@emotion/core'
+import Layout from "../components/subLayout"
 import SEO from "../components/seo"
 
-const NotFoundPage = () => (
-  <Layout>
-    <SEO title="404: Not found" />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </Layout>
-)
+const container = css({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  minHeight: 'calc(100vh - 100px)',
+})
+
+const h1 = css({
+  marginBottom: '30px',
+})
+
+const NotFoundPage = () => {
+  return (
+    <Layout>
+      <SEO title="404: Not found" />
+      <div css={container}>
+        <h1 css={h1}>NOT FOUND</h1>
+      </div>
+    </Layout>
+  )
+}
 
 export default NotFoundPage

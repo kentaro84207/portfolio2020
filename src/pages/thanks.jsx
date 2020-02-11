@@ -7,7 +7,7 @@ const container = css({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  minHeight: 'calc(100vh - 70px)',
+  minHeight: 'calc(100vh - 100px)',
 })
 
 const h1 = css({
