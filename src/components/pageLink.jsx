@@ -3,8 +3,6 @@ import PropTypes from "prop-types"
 import { css } from '@emotion/core'
 import TransitionLink from 'gatsby-plugin-transition-link'
 import { sp, tablet } from "../constants/constants"
-// import In from '../animation/subIn'
-// import Out from '../animation/subOut'
 
 const link = css({
   display: 'block',
@@ -28,11 +26,9 @@ class PageLink extends React.Component {
         to={`${linkTo}`}
         css={link}
         exit={{
-          // trigger: () => Out(),
           length: 0
         }}
         entry={{
-          // trigger: () => In(),
           delay: 0
         }}
       >
