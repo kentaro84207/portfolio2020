@@ -24,7 +24,8 @@ const cardContents = css({
 })
 
 const text = css({
-  minHeight: '100px',
+  height: '150px',
+  overflow: 'hidden',
 },
   mt10
 )
