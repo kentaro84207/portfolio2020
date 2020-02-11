@@ -8,6 +8,7 @@ const card = css({
   width: '100%',
   backgroundColor: colors.whiteColor,
   borderRadius: '6px',
+  boxShadow: '0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23)',
   [`${sp}`]: {
     width: '100%',
   },
