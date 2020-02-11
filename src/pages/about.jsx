@@ -24,13 +24,13 @@ const AboutPage = () => {
   return (
     <Layout>
       <SEO title="About" />
-      <h1 className="an-subPage">About me</h1>
-      <p className="an-subPage" css={mt20}>
+      <h1>About me</h1>
+      <p css={mt20}>
         こんにちは。デザインもコーディングも好きなWebエンジニアです。
         <br />
         I am Kentaro Suzuki, a web developer who likes design and coding.
       </p>
-      <section className="an-subPage">
+      <section>
         <h2 css={mt50}>Skill set</h2>
         <ul css={mt20}>
           <li>HTML / CSS / SCSS / GSAP</li>
@@ -42,7 +42,7 @@ const AboutPage = () => {
           <li>etc...</li>
         </ul>
       </section>
-      <section className="an-subPage">
+      <section>
         <h2 css={mt50}>Social Media</h2>
         <ul css={list}>
           <li css={sns}>

@@ -35,7 +35,7 @@ const cardBtn = css({
 )
 
 const Card = ({ post }) => (
-  <article className="an-subPage" css={card}>
+  <article css={card}>
     {post.image && (
       <Img fluid={post.image.fluid} css={image} />
     )}

@@ -22,7 +22,6 @@ class PageLink extends React.Component {
     const { linkText, linkTo } = this.props
     return (
       <TransitionLink
-        className="an-link"
         to={`${linkTo}`}
         css={link}
         exit={{

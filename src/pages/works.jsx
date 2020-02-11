@@ -52,7 +52,7 @@ const WorksPage = () => {
   return (
     <Layout>
       <SEO title="Works" />
-      <h1 className="an-subPage">Works</h1>
+      <h1>Works</h1>
       <div css={container}>
         {data.allContentfulPost.edges.map(post => (
           <Card key={post.node.id} post={post.node} />

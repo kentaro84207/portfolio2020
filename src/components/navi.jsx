@@ -113,7 +113,6 @@ class Navi extends React.Component {
           <TransitionLink
             to="/"
             css={circle}
-            className="an-logo"
             exit={{
               length: 0
             }}
@@ -126,7 +125,7 @@ class Navi extends React.Component {
             <PageLink linkText="Works" linkTo="/works/" />
             <PageLink linkText="Contact" linkTo="/contact/" />
           </div>
-          <div className="an-naviBg" css={bg} />
+          <div css={bg} />
         </div>
       </>
     )
