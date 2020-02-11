@@ -2,7 +2,7 @@ import React from "react"
 import { css } from '@emotion/core'
 import Img from "gatsby-image"
 import { sp, colors } from "../constants/constants"
-import { mt10 } from "../styles/util"
+import { mt10, mt20 } from "../styles/util"
 
 const card = css({
   width: '100%',
@@ -22,16 +22,28 @@ const cardContents = css({
   padding: '20px 15px',
 })
 
+const text = css({
+  minHeight: '100px',
+},
+  mt10
+)
+
+const tools = css({
+  fontWeight: 700,
+},
+  mt20
+)
+
 const cardBtn = css({
   display: 'block',
   width: '80%',
-  padding: '5px',
+  padding: '10px',
   margin: '0 auto',
   textAlign: 'center',
   backgroundColor: colors.secondaryColor,
   borderRadius: '3px'
 },
-  mt10
+  mt20
 )
 
 const Card = ({ post }) => (
@@ -41,8 +53,8 @@ const Card = ({ post }) => (
     )}
     <div css={cardContents}>
       <h2>{post.title}</h2>
-      <p css={mt10}>{post.description.content[0].content[0].value}</p>
-      <p css={mt10}>{post.tools}</p>
+      <p css={text}>{post.description.content[0].content[0].value}</p>
+      <p css={tools}>{post.tools}</p>
       <a css={cardBtn} href={post.link}>visit site</a>
     </div>
   </article>
