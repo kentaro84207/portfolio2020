@@ -33,9 +33,6 @@ const line = css({
     width: '100%',
     height: '4px',
     backgroundColor: colors.blackColor,
-    '&:not(:last-of-type)': {
-      // marginBottom: '10px',
-    },
     transition: 'all 0.3s',
     '&:first-of-type': {
       transform: 'translateY(-10px)',

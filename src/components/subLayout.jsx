@@ -27,7 +27,6 @@ const wrapper = css({
   display: 'grid',
   gridTemplateColumns: '250px 2fr',
   minHeight: 'calc(100vh - 40px)',
-  // opacity: 0,
   [`${tablet}`]: {
     gridTemplateColumns: '150px 2fr',
   },
