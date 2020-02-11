@@ -5,7 +5,6 @@ import { gsap } from 'gsap'
 import { desktop, sp, tablet, colors } from "../constants/constants"
 import PageLink from "./pageLink"
 import Hamburger from "./hamburger"
-// import topIn from '../animation/topIn'
 
 const container = css({
   gridRow: '1 / 2',
@@ -77,7 +76,7 @@ class Navi extends React.Component {
       isActive: false,
     }
     this.tl = gsap.timeline()
-    this.foo = React.createRef()
+    this.nav = React.createRef()
   }
 
   handleActive() {
@@ -87,7 +86,7 @@ class Navi extends React.Component {
   }
 
   openNavi() {
-    this.tl.to(this.foo.current, {
+    this.tl.to(this.nav.current, {
       opacity: 1,
       duration: 0.3,
       display: 'block',
@@ -95,7 +94,7 @@ class Navi extends React.Component {
   }
 
   closeNavi() {
-    this.tl.to(this.foo.current, {
+    this.tl.to(this.nav.current, {
       opacity: 0,
       duration: 0.3,
       display: 'none',
@@ -110,13 +109,11 @@ class Navi extends React.Component {
           open={isActive ? 'opened' : 'closed'}
           handleOpen={() => { this.handleActive() }}
         />
-        <div ref={this.foo} css={container}>
+        <div ref={this.nav} css={container}>
           <TransitionLink
             to="/"
             css={circle}
-            className="an-logo"
             exit={{
-              // trigger: () => topIn(window.innerWidth),
               length: 0
             }}
             entry={{
@@ -128,7 +125,7 @@ class Navi extends React.Component {
             <PageLink linkText="Works" linkTo="/works/" />
             <PageLink linkText="Contact" linkTo="/contact/" />
           </div>
-          <div className="an-naviBg" css={bg} />
+          <div css={bg} />
         </div>
       </>
     )

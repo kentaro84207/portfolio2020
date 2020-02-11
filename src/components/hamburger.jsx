@@ -21,6 +21,9 @@ const hamburger = css({
       '&:last-of-type': {
         transform: 'rotate(45deg) translateX(-5px)',
       },
+    },
+    '&:hover': {
+      outline: 'none',
     }
   }
 })

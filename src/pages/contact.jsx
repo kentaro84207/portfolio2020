@@ -57,7 +57,7 @@ const ContactPage = () => {
   return (
     <Layout>
       <SEO title="Contact" />
-      <h1 className="an-subPage">Contact</h1>
+      <h1>Contact</h1>
       <form
         css={mt50}
         name="Contact Form"
@@ -67,21 +67,21 @@ const ContactPage = () => {
         action="/thanks"
       >
         <input type="hidden" name="form-name" value="Contact Form" />
-        <p css={textBox} className="an-subPage">
+        <p css={textBox}>
           <label htmlFor="name">
             Your Name :
             {' '}
           </label>
           <input css={input} id="name" type="text" name="name" required />
         </p>
-        <p css={textBox} className="an-subPage">
+        <p css={textBox}>
           <label htmlFor="email">
             Your Email :
             {' '}
           </label>
           <input css={input} id="email" type="email" name="email" required />
         </p>
-        <p css={textAreaBox} className="an-subPage">
+        <p css={textAreaBox}>
           <label htmlFor="message">
             Message :
             {' '}
@@ -94,7 +94,7 @@ const ContactPage = () => {
             <input id="honeypot" name="bot-field" />
           </label>
         </p>
-        <p css={mt50} className="an-subPage">
+        <p css={mt50}>
           <button css={btn} type="submit">Send</button>
         </p>
       </form>

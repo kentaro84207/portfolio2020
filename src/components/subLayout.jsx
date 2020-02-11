@@ -60,7 +60,7 @@ const subLayout = ({ children }) => {
         css={sub}
       >
         <main css={main}>
-          <div className="an-wrapper" css={wrapper}>
+          <div css={wrapper}>
             <Navi />
             <div css={container}>
               <div css={inner}>

@@ -12,6 +12,7 @@ const wrapper = css({
   minHeight: 'calc(100vh - 40px)',
   [`${sp}`]: {
     gridTemplateColumns: '1fr',
+    gridTemplateRows: '250px 1fr',
     minHeight: '100vh',
   }
 })
@@ -127,8 +128,8 @@ const IndexPage = () => {
       <Load />
       <div css={wrapper}>
         <div css={titleBox}>
-          <div className="an-bg" css={bg} />
-          <div className="an-title" css={title}>
+          <div css={bg} />
+          <div css={title}>
             <h1 css={h1}>
               Hi
               <span css={dot}>.</span>

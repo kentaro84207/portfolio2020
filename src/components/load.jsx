@@ -1,10 +1,9 @@
 import React from "react"
 import { css } from '@emotion/core'
+import { gsap, Power3 } from 'gsap'
 import { desktop, mobile, colors } from "../constants/constants"
-// import loadIn from '../animation/loadIn'
 
 const load = css({
-  display: 'none',
   position: 'absolute',
   top: 0,
   left: 0,
@@ -26,17 +25,34 @@ const block = css({
 })
 
 class Load extends React.Component {
-  // componentDidMount() {
-  //   const winW = window.innerWidth - 40
-  //   loadIn(winW)
-  // }
+  constructor(props) {
+    super(props)
+    this.tl = gsap.timeline()
+    this.containerEl = null
+    this.blockEls = []
+  }
+
+  componentDidMount() {
+    const winW = window.innerWidth - 40
+    const fixedWinW = winW > 991 ? winW : winW + 40
+    this.tl.to(this.blockEls, {
+      x: -fixedWinW,
+      duration: 0.8,
+      ease: Power3.easeIn,
+      stagger: 0.1,
+      delay: 0.2,
+    })
+    this.tl.to(this.containerEl, {
+      display: 'none',
+    })
+  }
 
   render() {
     return (
-      <div className="an-load" css={load}>
-        <div className="an-block" css={block} />
-        <div className="an-block" css={block} />
-        <div className="an-block" css={block} />
+      <div css={load} ref={el => { this.containerEl = el }}>
+        <div css={block} ref={el => { this.blockEls[0] = el }} />
+        <div css={block} ref={el => { this.blockEls[1] = el }} />
+        <div css={block} ref={el => { this.blockEls[2] = el }} />
       </div>
     )
   }
