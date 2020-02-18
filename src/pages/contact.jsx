@@ -53,53 +53,51 @@ const btn = css({
   },
 })
 
-const ContactPage = () => {
-  return (
-    <Layout>
-      <SEO title="Contact" />
-      <h1>Contact</h1>
-      <form
-        css={mt50}
-        name="Contact Form"
-        method="POST"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-        action="/thanks"
-      >
-        <input type="hidden" name="form-name" value="Contact Form" />
-        <p css={textBox}>
-          <label htmlFor="name">
-            Your Name :
-            {' '}
-          </label>
-          <input css={input} id="name" type="text" name="name" required />
-        </p>
-        <p css={textBox}>
-          <label htmlFor="email">
-            Your Email :
-            {' '}
-          </label>
-          <input css={input} id="email" type="email" name="email" required />
-        </p>
-        <p css={textAreaBox}>
-          <label htmlFor="message">
-            Message :
-            {' '}
-          </label>
-          <textarea css={textArea} id="message" name="message" required />
-        </p>
-        <p css={hidden}>
-          <label htmlFor="honeypot">
-            Don’t fill this out if you’re human:
-            <input id="honeypot" name="bot-field" />
-          </label>
-        </p>
-        <p css={mt50}>
-          <button css={btn} type="submit">Send</button>
-        </p>
-      </form>
-    </Layout>
-  )
-}
+const ContactPage = () => (
+  <Layout>
+    <SEO title="Contact" />
+    <h1>Contact</h1>
+    <form
+      css={mt50}
+      name="Contact Form"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      action="/thanks"
+    >
+      <input type="hidden" name="form-name" value="Contact Form" />
+      <p css={textBox}>
+        <label htmlFor="name">
+          Your Name :
+          {' '}
+        </label>
+        <input css={input} id="name" type="text" name="name" required />
+      </p>
+      <p css={textBox}>
+        <label htmlFor="email">
+          Your Email :
+          {' '}
+        </label>
+        <input css={input} id="email" type="email" name="email" required />
+      </p>
+      <p css={textAreaBox}>
+        <label htmlFor="message">
+          Message :
+          {' '}
+        </label>
+        <textarea css={textArea} id="message" name="message" required />
+      </p>
+      <p css={hidden}>
+        <label htmlFor="honeypot">
+          Don’t fill this out if you’re human:
+          <input id="honeypot" name="bot-field" />
+        </label>
+      </p>
+      <p css={mt50}>
+        <button css={btn} type="submit">Send</button>
+      </p>
+    </form>
+  </Layout>
+)
 
 export default ContactPage

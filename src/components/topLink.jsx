@@ -17,7 +17,6 @@ const link = css({
 })
 
 const TopLink = ({ linkText, linkTo }) => (
-
   <TransitionLink
     to={`${linkTo}`}
     css={link}

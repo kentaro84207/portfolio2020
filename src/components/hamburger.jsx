@@ -47,24 +47,19 @@ const line = css({
   }
 })
 
-class Hamburger extends React.Component {
-  render() {
-    const { handleOpen, open } = this.props
-    return (
-      <div
-        css={hamburger}
-        role="button"
-        tabIndex={0}
-        className={open}
-        onClick={handleOpen}
-        onKeyDown={handleOpen}
-      >
-        <div css={line} />
-        <div css={line} />
-        <div css={line} />
-      </div>
-    )
-  }
-}
+const Hamburger = ({ handleOpen, open }) => (
+  <div
+    css={hamburger}
+    role="button"
+    tabIndex={0}
+    className={open}
+    onClick={handleOpen}
+    onKeyDown={handleOpen}
+  >
+    <div css={line} />
+    <div css={line} />
+    <div css={line} />
+  </div>
+)
 
 export default Hamburger

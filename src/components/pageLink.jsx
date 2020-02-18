@@ -17,25 +17,20 @@ const link = css({
   },
 })
 
-class PageLink extends React.Component {
-  render() {
-    const { linkText, linkTo } = this.props
-    return (
-      <TransitionLink
-        to={`${linkTo}`}
-        css={link}
-        exit={{
-          length: 0
-        }}
-        entry={{
-          delay: 0
-        }}
-      >
-        {linkText}
-      </TransitionLink>
-    )
-  }
-}
+const PageLink = ({ linkText, linkTo }) => (
+  <TransitionLink
+    to={`${linkTo}`}
+    css={link}
+    exit={{
+      length: 0
+    }}
+    entry={{
+      delay: 0
+    }}
+  >
+    {linkText}
+  </TransitionLink>
+)
 
 PageLink.propTypes = {
   linkText: PropTypes.string,
