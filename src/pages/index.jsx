@@ -121,32 +121,30 @@ const lists = css({
 
 
 
-const IndexPage = () => {
-  return (
-    <Layout>
-      <SEO title="Hi" />
-      <Load />
-      <div css={wrapper}>
-        <div css={titleBox}>
-          <div css={bg} />
-          <div css={title}>
-            <h1 css={h1}>
-              Hi
-              <span css={dot}>.</span>
-            </h1>
-            <h2 css={h2}>I&apos;m Kentaro - Web developer</h2>
-          </div>
-        </div>
-        <div css={listBox}>
-          <div css={lists}>
-            <TopLink linkText="About" linkTo="/about/" />
-            <TopLink linkText="Works" linkTo="/works/" />
-            <TopLink linkText="Contact" linkTo="/contact/" />
-          </div>
+const IndexPage = () => (
+  <Layout>
+    <SEO title="Hi" />
+    <Load />
+    <div css={wrapper}>
+      <div css={titleBox}>
+        <div css={bg} />
+        <div css={title}>
+          <h1 css={h1}>
+            Hi
+            <span css={dot}>.</span>
+          </h1>
+          <h2 css={h2}>I&apos;m Kentaro - Web developer</h2>
         </div>
       </div>
-    </Layout>
-  )
-}
+      <div css={listBox}>
+        <div css={lists}>
+          <TopLink linkText="About" linkTo="/about/" />
+          <TopLink linkText="Works" linkTo="/works/" />
+          <TopLink linkText="Contact" linkTo="/contact/" />
+        </div>
+      </div>
+    </div>
+  </Layout>
+)
 
 export default IndexPage

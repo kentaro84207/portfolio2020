@@ -52,26 +52,24 @@ const inner = css({
   },
 })
 
-const subLayout = ({ children }) => {
-  return (
-    <>
-      <div
-        css={sub}
-      >
-        <main css={main}>
-          <div css={wrapper}>
-            <Navi />
-            <div css={container}>
-              <div css={inner}>
-                {children}
-              </div>
+const subLayout = ({ children }) => (
+  <>
+    <div
+      css={sub}
+    >
+      <main css={main}>
+        <div css={wrapper}>
+          <Navi />
+          <div css={container}>
+            <div css={inner}>
+              {children}
             </div>
           </div>
-        </main>
-      </div>
-    </>
-  )
-}
+        </div>
+      </main>
+    </div>
+  </>
+)
 
 subLayout.propTypes = {
   children: PropTypes.node.isRequired,

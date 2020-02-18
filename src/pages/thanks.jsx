@@ -14,15 +14,13 @@ const h1 = css({
   marginBottom: '30px',
 })
 
-const ThanksPage = () => {
-  return (
-    <Layout>
-      <SEO title="Thanks" />
-      <div css={container}>
-        <h1 css={h1}>Thank you !</h1>
-      </div>
-    </Layout>
-  )
-}
+const ThanksPage = () => (
+  <Layout>
+    <SEO title="Thanks" />
+    <div css={container}>
+      <h1 css={h1}>Thank you !</h1>
+    </div>
+  </Layout>
+)
 
 export default ThanksPage

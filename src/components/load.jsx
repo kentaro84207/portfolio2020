@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { css } from '@emotion/core'
 import { gsap, Power3 } from 'gsap'
 import { desktop, mobile, colors } from "../constants/constants"
@@ -24,38 +24,33 @@ const block = css({
   backgroundColor: colors.loadColor,
 })
 
-class Load extends React.Component {
-  constructor(props) {
-    super(props)
-    this.tl = gsap.timeline()
-    this.containerEl = null
-    this.blockEls = []
-  }
+const Load = () => {
+  const tl = gsap.timeline()
+  let containerEl = null
+  const blockEls = []
 
-  componentDidMount() {
+  useEffect(() => {
     const winW = window.innerWidth - 40
     const fixedWinW = winW > 991 ? winW : winW + 40
-    this.tl.to(this.blockEls, {
+    tl.to(blockEls, {
       x: -fixedWinW,
       duration: 0.8,
       ease: Power3.easeIn,
       stagger: 0.1,
       delay: 0.2,
     })
-    this.tl.to(this.containerEl, {
+    tl.to(containerEl, {
       display: 'none',
     })
-  }
+  }, [])
 
-  render() {
-    return (
-      <div css={load} ref={el => { this.containerEl = el }}>
-        <div css={block} ref={el => { this.blockEls[0] = el }} />
-        <div css={block} ref={el => { this.blockEls[1] = el }} />
-        <div css={block} ref={el => { this.blockEls[2] = el }} />
-      </div>
-    )
-  }
+  return (
+    <div css={load} ref={el => { containerEl = el }}>
+      <div css={block} ref={el => { blockEls[0] = el }} />
+      <div css={block} ref={el => { blockEls[1] = el }} />
+      <div css={block} ref={el => { blockEls[2] = el }} />
+    </div>
+  )
 }
 
 export default Load

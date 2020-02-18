@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { css } from '@emotion/core'
 import TransitionLink from 'gatsby-plugin-transition-link'
 import { gsap } from 'gsap'
@@ -69,67 +69,58 @@ const bg = css({
   },
 })
 
-class Navi extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      isActive: false,
-    }
-    this.tl = gsap.timeline()
-    this.nav = React.createRef()
-  }
+const Navi = () => {
+  const [isActive, setIsActive] = useState(false)
+  const tl = gsap.timeline()
+  const nav = React.createRef()
 
-  handleActive() {
-    const { isActive } = this.state
-    this.setState({ isActive: !isActive })
-    return isActive ? this.closeNavi() : this.openNavi()
-  }
-
-  openNavi() {
-    this.tl.to(this.nav.current, {
+  const openNavi = () => {
+    tl.to(nav.current, {
       opacity: 1,
       duration: 0.3,
       display: 'block',
     })
   }
 
-  closeNavi() {
-    this.tl.to(this.nav.current, {
+  const closeNavi = () => {
+    tl.to(nav.current, {
       opacity: 0,
       duration: 0.3,
       display: 'none',
     })
   }
 
-  render() {
-    const { isActive } = this.state
-    return (
-      <>
-        <Hamburger
-          open={isActive ? 'opened' : 'closed'}
-          handleOpen={() => { this.handleActive() }}
-        />
-        <div ref={this.nav} css={container}>
-          <TransitionLink
-            to="/"
-            css={circle}
-            exit={{
-              length: 0
-            }}
-            entry={{
-              delay: 0
-            }}
-          />
-          <div css={list}>
-            <PageLink linkText="About" linkTo="/about/" />
-            <PageLink linkText="Works" linkTo="/works/" />
-            <PageLink linkText="Contact" linkTo="/contact/" />
-          </div>
-          <div css={bg} />
-        </div>
-      </>
-    )
+  const handleActive = () => {
+    setIsActive(!isActive)
+    return isActive ? closeNavi() : openNavi()
   }
+
+  return (
+    <>
+      <Hamburger
+        open={isActive ? 'opened' : 'closed'}
+        handleOpen={() => { handleActive() }}
+      />
+      <div ref={nav} css={container}>
+        <TransitionLink
+          to="/"
+          css={circle}
+          exit={{
+            length: 0
+          }}
+          entry={{
+            delay: 0
+          }}
+        />
+        <div css={list}>
+          <PageLink linkText="About" linkTo="/about/" />
+          <PageLink linkText="Works" linkTo="/works/" />
+          <PageLink linkText="Contact" linkTo="/contact/" />
+        </div>
+        <div css={bg} />
+      </div>
+    </>
+  )
 }
 
 export default Navi

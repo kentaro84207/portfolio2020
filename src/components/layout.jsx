@@ -18,17 +18,15 @@ const main = css({
   position: 'relative'
 })
 
-const Layout = ({ children }) => {
-  return (
-    <>
-      <div css={container}>
-        <main css={main}>
-          {children}
-        </main>
-      </div>
-    </>
-  )
-}
+const Layout = ({ children }) => (
+  <>
+    <div css={container}>
+      <main css={main}>
+        {children}
+      </main>
+    </div>
+  </>
+)
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
